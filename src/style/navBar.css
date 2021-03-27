@@ -1,24 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
 .navbar-header {
   position: sticky;
   overflow: hidden;
   top: 0;
   right: 0;
-  height: 55px;
+  height: 70px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(6, 6, 70, 0.253);
-  border-bottom: 1.2px solid #2a2a52;
   z-index: 30;
+  background-color: transparent;
+}
+
+.nav_black {
+  background-color: #201a47;
+  border-bottom: 1.2px solid #2a2a52;
+  background: -webkit-linear-gradient(to right, #683155, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }
 nav.navbar {
   height: 100%;
@@ -28,12 +26,14 @@ nav.navbar {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  padding: 0 2rem;
+  background-color: transparent;
 }
 .nav-logo::after {
   content: 'wonde';
   font-size: 17px;
   padding-left: 8px;
-  color: rgb(122, 153, 37);
+  color: #ffffff;
   font-weight: 800;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
@@ -63,22 +63,7 @@ nav .nav-logo {
   transform: scale(1.07);
 }
 .nav-bargure {
-  flex: 1;
-}
-.nav_black {
-  background: #0f0c29; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #683155,
-    #302b63,
-    #0f0c29
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #24243e,
-    #302b63,
-    #0f0c29
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: none;
 }
 
 ul {
@@ -87,15 +72,15 @@ ul {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: 40%;
   margin: 0;
 }
+
 .hideNaveBar {
   display: none;
   border: 1px solid #f6f3f3;
 }
+
 ul > li {
-  border: 1px solid #1f4721;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -103,9 +88,11 @@ ul > li {
   border-radius: 4px;
   font-family: 'Bebas Neue', cursive;
   letter-spacing: 0.15rem;
-  height: 80%;
+  height: 35px;
+  margin-left: 1rem;
   list-style: none;
 }
+
 ul li > a {
   display: flex;
   justify-content: center;
@@ -113,11 +100,11 @@ ul li > a {
   text-decoration: none;
   min-width: 70px;
   font-size: 14px;
-  color: #a19999;
+  color: #ffffff;
 }
+
 ul > li:hover,
 ul > li:active {
-  background-color: #1a1369;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
@@ -125,10 +112,7 @@ ul > li:active {
 li a:hover {
   text-decoration: none;
 }
-/* .nav-lists li:nth-of-type(1) {
-  margin-left: auto;
-}
-*/
+
 .nav-menu svg {
   color: white;
 }
@@ -145,6 +129,7 @@ li a:hover {
   display: none;
   z-index: 20;
 }
+
 @media screen and (max-width: 1124px) {
   .nav-lists {
     width: 50%;
@@ -152,14 +137,17 @@ li a:hover {
 }
 
 @media screen and (max-width: 900px) {
+  .nav-bargure {
+    display: none;
+  }
   .nav-lists {
     width: 60%;
   }
 }
+
 @media screen and (max-width: 800px) {
   .navbar-header {
     height: 105px;
-    background-color: #0a0a4e;
     margin-bottom: 5px;
   }
   .navbar {
@@ -176,7 +164,6 @@ li a:hover {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    /* height: 50%; */
     width: 50%;
   }
   nav .nav-logo {
@@ -191,6 +178,7 @@ li a:hover {
     margin: 0 auto;
   }
 }
+
 @media screen and (max-width: 500px) {
   body {
     overflow-x: hidden;
@@ -231,7 +219,6 @@ li a:hover {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-color: #060631;
     transform: translateX(110%);
     transition: all 0.5s ease-in;
     z-index: 59;

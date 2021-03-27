@@ -7,7 +7,7 @@ import MenuItems from './NavBarMenusItems';
 import '../../style/navBar.css';
 import LOGO from '../../img/wondeLogo.png';
 const NavBar = () => {
-  const [show, handleShow] = useState(false);
+  const [showNavBackground, setShowNavBackground] = useState(false);
   const [showSideNav, setHide] = useState(false);
 
   const shewNavBar = () => {
@@ -16,18 +16,24 @@ const NavBar = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        handleShow(true);
-      } else handleShow(false);
-
+      if (window.scrollY < 100) {
+        console.log(showNavBackground);
+        setShowNavBackground(false);
+      } else {
+        setShowNavBackground(true);
+      }
       return () => {
         window.removeEventListener('scroll');
       };
     });
-  }, []);
+  }, [showNavBackground]);
 
   return (
-    <header className="navbar-header">
+    <header
+      className={
+        showNavBackground ? 'navbar-header nav_black' : 'navbar-header '
+      }
+    >
       <div className="nav-bargure">
         {!showSideNav ? (
           <div className="nav-menu" onClick={shewNavBar}>
@@ -39,7 +45,7 @@ const NavBar = () => {
           </div>
         )}
       </div>
-      <nav className={show ? 'navbar nav_black' : 'navbar'}>
+      <nav className="navbar">
         <div className="nav-logo">
           <Link to="/">
             <img className="logo" src={LOGO} alt="Logo" />

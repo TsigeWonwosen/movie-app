@@ -98,7 +98,7 @@ const Movies = () => {
               type="text"
               name="search"
               id="search"
-              placeholder="Search"
+              placeholder="Enter your key words"
               onChange={(e) => setSearch(e.target.value)}
               value={search}
             />
