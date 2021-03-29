@@ -32,7 +32,7 @@ function truncateString(str, num) {
     return str;
   }
 }
-function Banner() {
+function Banner({ handleClick }) {
   const [movie, setMovie] = useState({});
 
   const fetchMovie = useCallback(() => {
@@ -61,12 +61,12 @@ function Banner() {
           verticalAlign: 'middle',
           height: '100%',
           width: '100%',
-          backgroundImage: `url(${img}), linear-gradient(90deg, #05054b,  rgba(255,255,255,0.1) 60%`,
-          backgroundSize: '100%',
+          backgroundImage: `url(${img}), linear-gradient(45deg , #05054b 40%,  rgba(0,0,0,0.2) 55%`,
           backgroundRepeat: 'no-repeat',
-          objectFit: 'cover',
+          backgroundPosition: '10% top',
+          backgroundSize: 'cover',
           opacity: '1',
-          backgroundBlendMode: 'multiply',
+          backgroundBlendMode: 'overlay',
         }}
       >
         <div className="banner_contents">
@@ -81,7 +81,7 @@ function Banner() {
             </div>
           )}
           <div className="banner_buttons">
-            <Button>Watch Now</Button>
+            <Button onClick={() => handleClick(movie)}>Watch Now</Button>
             <Button primary>Add To List</Button>
           </div>
         </div>

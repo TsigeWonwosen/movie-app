@@ -46,6 +46,7 @@ nav .nav-logo {
   justify-content: center;
   align-items: center;
   margin-bottom: auto;
+  background-color: transparent !important;
 }
 .logo {
   width: 35px;
@@ -55,8 +56,8 @@ nav .nav-logo {
   border-radius: 34%;
   align-items: center;
   justify-content: center;
-  border: 4px solid #939c3d;
-  box-shadow: -8px 9px 73px 0px rgba(115, 74, 191, 1);
+  border: 2px solid #942a33;
+  box-shadow: -8px 9px 73px 0px rgb(151, 122, 204);
   transition: all 0.3s ease-in;
 }
 .logo:hover {

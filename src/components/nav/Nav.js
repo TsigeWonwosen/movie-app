@@ -4,6 +4,7 @@ import { IoMdClose } from 'react-icons/io';
 import { FcMenu } from 'react-icons/fc';
 
 import MenuItems from './NavBarMenusItems';
+import {Search} from '../../components'
 import '../../style/navBar.css';
 import LOGO from '../../img/wondeLogo.png';
 const NavBar = () => {

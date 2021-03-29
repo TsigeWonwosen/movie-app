@@ -7,7 +7,7 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Movies} />
+          <Route exact path="/" component={ () => <Movies/>} />
           <Route exact path="/login" component={Login} />
           <Route path="*" component={Error} />
         </Switch>
