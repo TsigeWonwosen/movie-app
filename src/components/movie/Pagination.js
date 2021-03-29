@@ -1,8 +1,11 @@
 import Pagination from 'react-js-pagination';
 import React from 'react';
+import { MovieContext } from '../../context/ContextProvider';
 
 import '../../style/paginationStyle.css';
-function MoviesPagination({ activePage, handlePageChange }) {
+
+function MoviesPagination() {
+  const { activePage, handlePageChange } = React.useContext(MovieContext);
   return (
     <div className="movie-pagination">
       <Pagination

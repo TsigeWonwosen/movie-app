@@ -4,9 +4,11 @@ import { IoMdClose } from 'react-icons/io';
 import { FcMenu } from 'react-icons/fc';
 
 import MenuItems from './NavBarMenusItems';
-import {Search} from '../../components'
-import '../../style/navBar.css';
+import { Search } from '../../components';
 import LOGO from '../../img/wondeLogo.png';
+
+import '../../style/navBar.css';
+
 const NavBar = () => {
   const [showNavBackground, setShowNavBackground] = useState(false);
   const [showSideNav, setHide] = useState(false);
@@ -52,6 +54,7 @@ const NavBar = () => {
             <img className="logo" src={LOGO} alt="Logo" />
           </Link>
         </div>
+        <Search />
         <ul
           className={showSideNav ? 'showSideNav' : 'nav-lists'}
           onClick={shewNavBar}

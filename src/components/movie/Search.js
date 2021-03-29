@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { MovieContext } from '../../context/ContextProvider';
 
-function Search({ handleSubmit, setSearch, search }) {
+function Search() {
+  const { handleSearch } = useContext(MovieContext);
+  const [search, setSearch] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(search);
+    setSearch('');
+  };
   return (
     <div className="movie-header">
       <form onSubmit={handleSubmit}>

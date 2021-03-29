@@ -1,18 +1,22 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Nav, Error, Movies, Login, Footer } from './components';
-
+import { MovieProvider } from './context/ContextProvider';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={ () => <Movies/>} />
-          <Route exact path="/login" component={Login} />
-          <Route path="*" component={Error} />
-        </Switch>
-        <Footer />
-      </Router>
+      <MovieProvider>
+        <>
+          <Router>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={Movies} />
+              <Route exact path="/login" component={Login} />
+              <Route path="*" component={Error} />
+            </Switch>
+            <Footer />
+          </Router>
+        </>
+      </MovieProvider>
     </div>
   );
 }

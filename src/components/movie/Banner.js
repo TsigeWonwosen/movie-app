@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { APIURL, IMGPATH, DEFAULTIMAG } from '../../asset/api-key';
+import { API_URL, IMG_PATH, DEFAULT_IMAGE } from '../../asset/api-key';
 import styled from 'styled-components';
 import '../../style/banner.css';
+import { MovieContext } from '../../context/ContextProvider';
+
+
 const Button = styled.a`
   width: auto;
   height: 37px;
@@ -32,11 +35,12 @@ function truncateString(str, num) {
     return str;
   }
 }
-function Banner({ handleClick }) {
+function Banner (){
+  const { handleClick } = React.useContext(MovieContext);
   const [movie, setMovie] = useState({});
-
+  
   const fetchMovie = useCallback(() => {
-    fetch(APIURL)
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         let index;
@@ -50,7 +54,7 @@ function Banner({ handleClick }) {
     fetchMovie();
   }, [fetchMovie]);
 
-  let img = movie?.poster_path ? IMGPATH + movie.backdrop_path : DEFAULTIMAG;
+  let img = movie?.poster_path ? IMG_PATH + movie.backdrop_path : DEFAULT_IMAGE;
   return (
     <header className="movie_banner">
       <div

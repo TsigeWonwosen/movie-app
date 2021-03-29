@@ -181,9 +181,7 @@ li a:hover {
 }
 
 @media screen and (max-width: 500px) {
-  body {
-    overflow-x: hidden;
-  }
+ 
   .navbar-header {
     height: 66px;
     display: flex;

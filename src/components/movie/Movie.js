@@ -1,14 +1,10 @@
 import React from 'react';
-import { IMGPATH, DEFAULTIMAG } from '../../asset/api-key';
+import { IMG_PATH, DEFAULT_IMAGE } from '../../asset/api-key';
 function Movie({ movie, handleClick, setVoteClass }) {
   return (
-    <div
-      key={movie.id}
-      className="movie-card"
-      onClick={() => handleClick(movie)}
-    >
+    <div className="movie-card" onClick={() => handleClick(movie)}>
       <img
-        src={movie.poster_path ? IMGPATH + movie.poster_path : DEFAULTIMAG}
+        src={movie.poster_path ? IMG_PATH + movie.poster_path : DEFAULT_IMAGE}
         alt={movie.title}
       />
       <div className="movie-info">

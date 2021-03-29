@@ -6,7 +6,11 @@ Built with
 
 2. Rest Api
 
-3. Css
+3. Context Api
+
+4. Css
+
+5. Styled Components
 
 ## Available Scripts
 
