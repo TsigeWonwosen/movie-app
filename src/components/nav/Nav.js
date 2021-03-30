@@ -11,16 +11,16 @@ import '../../style/navBar.css';
 
 const NavBar = () => {
   const [showNavBackground, setShowNavBackground] = useState(false);
-  const [showSideNav, setHide] = useState(false);
+  const [windowSize, setWindowSize] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const shewNavBar = () => {
-    setHide((prvState) => !prvState);
+    setOpen((prvState) => !prvState);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY < 100) {
-        console.log(showNavBackground);
         setShowNavBackground(false);
       } else {
         setShowNavBackground(true);
@@ -31,14 +31,29 @@ const NavBar = () => {
     });
   }, [showNavBackground]);
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 900) {
+        setWindowSize(true);
+      } else {
+        setWindowSize(false);
+      }
+    }
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.addEventListener('resize', handleResize);
+  }, []);
+
   return (
     <header
       className={
         showNavBackground ? 'navbar-header nav_black' : 'navbar-header '
       }
     >
-      <div className="nav-bargure">
-        {!showSideNav ? (
+      <div className="nav-burger">
+        {!open ? (
           <div className="nav-menu" onClick={shewNavBar}>
             <FcMenu />
           </div>
@@ -54,10 +69,10 @@ const NavBar = () => {
             <img className="logo" src={LOGO} alt="Logo" />
           </Link>
         </div>
-        <Search />
+        {!windowSize && <Search />}
         <ul
-          className={showSideNav ? 'showSideNav' : 'nav-lists'}
-          onClick={shewNavBar}
+          className={windowSize ? (open ? 'showSideNav' : 'hide') : 'nav-lists'}
+          onClick={() => setOpen(false)}
         >
           {MenuItems.map((item, index) => (
             <li key={index}>

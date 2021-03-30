@@ -1,5 +1,5 @@
 .movie_banner {
-  margin: 0px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #f8f9fa;
@@ -78,10 +78,10 @@
   );
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .movie-search-pagination {
     max-width: 100%;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -96,43 +96,14 @@
     overflow: hidden;
   }
   .movie_banner {
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .banner_contents {
-    padding-top: 80px;
-    height: 90%;
     width: 100%;
     opacity: 0.8;
-    margin-top: 15px;
-  }
-  .banner_title {
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 800;
-    padding-bottom: 0.3rem;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .movie-container {
-    margin-top: 2.8rem;
-  }
-  .movie-pagination {
-    display: none;
-  }
-  .movie-search-pagination {
-    margin-top: 0;
-  }
-  .movie_banner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .banner_contents {
-    padding-top: 40px;
   }
   .banner_title {
     text-align: left;
@@ -142,7 +113,48 @@
   }
   .banner_description,
   .banner_contents::before {
+    max-width: 100%;
+    width: 60%;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  .banner_fadeBottom {
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movie-pagination {
     display: none;
+  }
+  .movie-search-pagination {
+    margin-top: 0;
+  }
+  .movie_banner {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner_contents {
+    padding-top: 40px;
+  }
+  .banner_title {
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding-bottom: 0.2rem;
+  }
+  .banner_description,
+  .banner_contents::before {
+    max-width: 100%;
+    width: 70%;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  .banner_fadeBottom {
+    height: 3rem;
   }
 }
 /* Banner */

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import YouTube from 'react-youtube';
 import Banner from './Banner';
 import MoviesPagination from './Pagination';
-import Search from './Search';
 import Movie from './Movie';
 import '../../style/movies.css';
 import { MovieContext } from '../../context/ContextProvider';
@@ -51,7 +50,6 @@ const Movies = () => {
       <div className="movie-search-pagination">
         <div className="movie-pagination">
           <MoviesPagination />
-          <Search />
         </div>
       </div>
       <div className="movie-wrapper">
@@ -65,9 +63,12 @@ const Movies = () => {
             />
           ))}
       </div>
-      <div>
-        <MoviesPagination />
+      <div className="movie-search-pagination">
+        <div className="movie-pagination">
+          <MoviesPagination />
+        </div>
       </div>
+      <div></div>
     </div>
   );
 };
