@@ -24,6 +24,10 @@ function MovieProvider({ children }) {
       fetch(SEARCH_API + search)
         .then((res) => res.json())
         .then((data) => setMovies(data));
+    } else {
+      fetch(new_Api_Request)
+        .then((res) => res.json())
+        .then((data) => setMovies(data));
     }
   };
 

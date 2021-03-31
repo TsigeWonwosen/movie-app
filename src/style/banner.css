@@ -132,7 +132,47 @@
     margin-top: 0;
   }
   .movie_banner {
-    height: 400px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner_contents {
+    padding-top: 40px;
+    justify-content: center;
+  }
+  .banner_title {
+    padding-bottom: 0.2rem;
+    font-family: 'Teko', sans-serif;
+    max-width: 80%;
+  }
+
+  .banner_title {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+  }
+  .banner_description,
+  .banner_contents::before {
+    max-width: 100%;
+    width: 70%;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  .banner_fadeBottom {
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .movie-pagination {
+    display: none;
+  }
+  .movie-search-pagination {
+    margin-top: 0;
+  }
+  .movie_banner {
     display: flex;
     justify-content: center;
     align-items: center;

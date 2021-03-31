@@ -12,6 +12,9 @@ function Search() {
   };
   return (
     <form onSubmit={handleSubmit} className="movie-header">
+      <button className="searchIcon" onClick={handleSubmit}>
+        <FaSearch />
+      </button>
       <input
         type="text"
         name="search"
@@ -20,9 +23,6 @@ function Search() {
         onChange={(e) => setSearch(e.target.value)}
         value={search}
       />
-      <button className="searchIcon" onClick={handleSubmit}>
-        <FaSearch />
-      </button>
     </form>
   );
 }

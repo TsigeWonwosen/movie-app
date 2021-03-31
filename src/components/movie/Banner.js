@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import '../../style/banner.css';
 import { MovieContext } from '../../context/ContextProvider';
 
-
 const Button = styled.a`
   width: auto;
   height: 37px;
@@ -26,6 +25,23 @@ const Button = styled.a`
   :hover {
     background-color: ${({ primary }) => (primary ? '#f8f9fa99' : '#f2494d99')};
   }
+  @media (max-width: 500px) {
+    height: 30px;
+    line-height: 40px;
+    padding: 4px 12px;
+    margin-right: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 350px) {
+    height: 27px;
+    line-height: 40px;
+    padding: 4px 10px;
+    margin-right: 1rem;
+    font-size: 12px;
+    font-weight: 500;
+  }
 `;
 
 function truncateString(str, num) {
@@ -35,10 +51,10 @@ function truncateString(str, num) {
     return str;
   }
 }
-function Banner (){
+function Banner() {
   const { handleClick } = React.useContext(MovieContext);
   const [movie, setMovie] = useState({});
-  
+
   const fetchMovie = useCallback(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -80,7 +96,6 @@ function Banner (){
 
           {Object.keys(movie).length > 0 && (
             <div className="banner_description">
-              {/* {movie.overview} */}
               {truncateString(`${movie.overview}`, 150)}
             </div>
           )}

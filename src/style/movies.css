@@ -115,42 +115,50 @@ img {
 }
 
 .movie-header {
-  max-width: 400px;
-  width: 350px;
+  width: 35%;
   height: 40px;
+  max-width: 400px;
+  min-width: 200px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   position: relative;
   border-radius: 20px;
+  z-index: 100;
 }
 .movie-header button {
-  background-color: transparent;
   outline: none;
   border: none;
   width: 50px;
-  background-color: #05054b98;
+  background-color: #05054be1;
   height: 100%;
   color: #fdf9f9;
   border-radius: 20px 0 0 20px;
 }
 
 #search {
-  margin: 0 auto;
-  padding: 0 1rem;
-  width: 50%;
+  padding-left: 3.5rem;
+  margin: 0;
+  box-sizing: border-box;
+  width: 32%;
+  min-width: 230px;
   height: 100%;
   background-color: #05054b98;
-  color: #fdf9f9;
+  color: #fff;
   font-size: 1rem;
   letter-spacing: 1px;
   outline: none;
   border: none;
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
+#search::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
 #search:placeholder-shown {
-  margin-left: 3rem;
+  background-color: #05054b98;
+  color: #fff;
 }
 #search:hover {
   background-color: #15097c;
@@ -158,7 +166,6 @@ img {
   width: 95%;
 }
 #search:focus {
-  margin-left: 3rem;
   width: 95%;
 }
 .searchIcon {
@@ -170,29 +177,14 @@ img {
   width: 100%;
   height: 100%;
 }
- 
+
 @media (max-width: 900px) {
   .movie-header {
-    padding-top: 1rem;
-    flex-direction: column;
-  }
-  .movie-search-pagination {
-    max-width: 100%;
-    margin-top: 4rem;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .movie-pagination {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 30%;
+    height: 40px;
+    max-width: 300px;
   }
 }
-
 /*  End of Movies  */
 
 /* Movie Trailer */

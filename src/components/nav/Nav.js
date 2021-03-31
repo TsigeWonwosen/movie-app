@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdClose } from 'react-icons/io';
-import { FcMenu } from 'react-icons/fc';
+import { BiMenuAltRight as FcMenu } from 'react-icons/bi';
 
 import MenuItems from './NavBarMenusItems';
 import { Search } from '../../components';
@@ -33,7 +33,7 @@ const NavBar = () => {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 900) {
+      if (window.innerWidth <= 668) {
         setWindowSize(true);
       } else {
         setWindowSize(false);
