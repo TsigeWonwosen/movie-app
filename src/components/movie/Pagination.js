@@ -7,15 +7,14 @@ import '../../style/paginationStyle.css';
 function MoviesPagination() {
   const { activePage, handlePageChange } = React.useContext(MovieContext);
   return (
-    <div className="movie-pagination">
-      <Pagination
-        activePage={activePage}
-        itemsCountPerPage={10}
-        totalItemsCount={450}
-        pageRangeDisplayed={10}
-        onChange={handlePageChange}
-      />
-    </div>
+    <Pagination
+      activePage={activePage}
+      itemsCountPerPage={10}
+      totalItemsCount={450}
+      pageRangeDisplayed={10}
+      onChange={handlePageChange}
+      // activeClassName={'active'}
+    />
   );
 }
 

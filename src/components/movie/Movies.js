@@ -47,11 +47,7 @@ const Movies = () => {
         </div>
       )}
 
-      <div className="movie-search-pagination">
-        <div className="movie-pagination">
-          <MoviesPagination />
-        </div>
-      </div>
+      <MoviesPagination />
       <div className="movie-wrapper">
         {movies &&
           movies.results?.map((movie) => (
@@ -63,12 +59,8 @@ const Movies = () => {
             />
           ))}
       </div>
-      <div className="movie-search-pagination">
-        <div className="movie-pagination">
-          <MoviesPagination />
-        </div>
-      </div>
-      <div></div>
+
+      <MoviesPagination />
     </div>
   );
 };
