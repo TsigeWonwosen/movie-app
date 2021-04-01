@@ -5,14 +5,15 @@ import { BiMenuAltRight as FcMenu } from 'react-icons/bi';
 
 import MenuItems from './NavBarMenusItems';
 import { Search } from '../../components';
+import useWindowSize from '../../hooks/useWindowSize';
 import LOGO from '../../img/wondeLogo.png';
 
 import '../../style/navBar.css';
 
 const NavBar = () => {
   const [showNavBackground, setShowNavBackground] = useState(false);
-  const [windowSize, setWindowSize] = useState(false);
   const [open, setOpen] = useState(false);
+  const windowSize = useWindowSize()
 
   const shewNavBar = () => {
     setOpen((prvState) => !prvState);
@@ -31,20 +32,7 @@ const NavBar = () => {
     });
   }, [showNavBackground]);
 
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 668) {
-        setWindowSize(true);
-      } else {
-        setWindowSize(false);
-      }
-    }
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.addEventListener('resize', handleResize);
-  }, []);
+  
 
   return (
     <header

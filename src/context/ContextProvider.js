@@ -56,7 +56,7 @@ function MovieProvider({ children }) {
 
   function handlePageChange(pageNumber) {
     setActivePage(pageNumber);
-    setMovies();
+    setMovies(data);
   }
   return (
     <MovieContext.Provider

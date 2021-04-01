@@ -43,4 +43,32 @@ ul.pagination li a.active {
   color: #337ab7;
 }
 
+@media (max-width: 440px) {
+  .pagination {
+    max-width: 600px;
+    width: 90vw;
+    min-width: 200px;
 
+    padding: 5px;
+    margin: 2rem auto;
+  }
+
+  ul.pagination li {
+    display: inline-block;
+    width: 30px;
+    height: 35px;
+    padding: 4px 2px;
+  }
+
+  ul.pagination li a {
+    text-decoration: none;
+    color: #9ebfdd;
+    font-size: 20px;
+  }
+
+  .page-selection {
+    width: 30px;
+    height: 40px;
+    color: #337ab7;
+  }
+}

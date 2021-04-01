@@ -14,41 +14,60 @@
 }
 
 .movie-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  margin: 2rem auto 1.5rem;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  margin: 1.5rem auto;
 }
+
+@media (max-width: 668px) {
+  .movie-wrapper {
+    padding: 1rem;
+  }
+}
+/* Movie Card  */
+
 .movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
-  max-width: 250px;
-  border: 1px solid #6e6cd1;
-  margin: 5px;
-  border-radius: 5px;
+  border: 1px solid #1c1c1d2d;
+  box-shadow: 2px 3px 10px 3px rgba(0, 1, 12, 0.3);
+  margin: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  max-width: 300px;
+  height: 300px;
   overflow: hidden;
   background-color: rgba(23, 42, 211, 0.3);
   transition: transform 500ms ease-in-out;
 }
+.imageContainer {
+  max-height: 90%;
+  width: 100%;
+}
 img {
   max-width: 100%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 .movie-info {
   display: flex;
-  padding: 1px 3px;
+  padding: 0px 0.5rem;
   align-items: center;
   justify-content: space-between;
   background-color: #100f64;
   color: #f1f1f1;
   max-width: 100%;
-  height: 25px;
+  height: 30px;
   overflow: hidden;
 }
 .movie-info .title {
-  width: 70%;
+  width: 80%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -56,50 +75,86 @@ img {
   justify-content: center;
 }
 .movie-info .title h5 {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
+}
+.vote-container {
+  width: 20%;
+  min-width: 50px;
 }
 .movie-info .vote {
-  width: 10%;
+  width: 20%;
+  min-width: 100px;
   background-color: transparent;
   border: none;
   border-radius: 5px;
-  margin: 0px 2px;
+  font-size: 13px;
+  font-weight: 600;
   outline: none;
 }
 
 .movie-info .vote.orange {
   color: rgb(233, 178, 75);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .movie-info .vote.green {
   color: rgb(57, 180, 57);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .movie-info .vote.red {
   color: rgb(228, 82, 82);
+  font-size: 13px;
+  font-weight: 600;
 }
 .movie-over {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 30px;
-  max-height: 100%;
-  color: #090941;
-  padding: 1rem;
+  background-color: #20223f;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 3px;
+  line-height: 1.5;
+  font-size: 0.86rem;
+  text-align: left;
+  max-height: 95%;
+  color: #e2e2ebb7;
+  padding: 0.7rem;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0px;
+  left: 10px;
   right: 0px;
+  overflow-y: scroll;
   transform: translateY(100%);
-  transition: transform 450ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .movie-card:hover .movie-over {
   transform: translateY(0%);
 }
 .movie-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.02);
   z-index: 3;
 }
+
+.movie-over::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.movie-over::-webkit-scrollbar-track {
+  background: #2e3e86;
+}
+
+/* Handle */
+.movie-over::-webkit-scrollbar-thumb {
+  background: rgb(16, 22, 53);
+}
+
+/* Handle on hover */
+.movie-over::-webkit-scrollbar-thumb:hover {
+  background: rgb(82, 113, 214);
+}
+/* End Of Card  */
 
 .movie-header {
   width: 35%;

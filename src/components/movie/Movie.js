@@ -1,18 +1,30 @@
 import React from 'react';
 import { IMG_PATH, DEFAULT_IMAGE } from '../../asset/api-key';
 function Movie({ movie, handleClick, setVoteClass }) {
+  let title =
+    movie.title.length > 20
+      ? movie.title.substring(0, 20).concat(' ...')
+      : movie.title;
+
   return (
     <div className="movie-card" onClick={() => handleClick(movie)}>
-      <img
-        src={movie.poster_path ? IMG_PATH + movie.poster_path : DEFAULT_IMAGE}
-        alt={movie.title}
-      />
+      <div className="imageContainer">
+        <img
+          src={movie.poster_path ? IMG_PATH + movie.poster_path : DEFAULT_IMAGE}
+          alt={movie.title}
+        />
+      </div>
       <div className="movie-info">
         <span className="title">
-          <h5>{movie.title}</h5>
+          <h5>{title}</h5>
         </span>
-        <span className={`vote ${setVoteClass(movie.vote_average)}`}>
-          <h5>{movie.vote_average}</h5>
+        <span className="vote-container">
+          <h5>
+            vote{' '}
+            <span className={`vote ${setVoteClass(movie.vote_average)}`}>
+              {movie.vote_average}
+            </span>
+          </h5>
         </span>
       </div>
       <div className="movie-over" onClick={() => handleClick(movie)}>
