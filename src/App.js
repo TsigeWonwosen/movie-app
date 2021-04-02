@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Nav, Error, Movies, Login, Footer } from './components';
+import { Nav, Error, Home, Login, Footer } from './components';
 import { MovieProvider } from './context/ContextProvider';
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
           <Router>
             <Nav />
             <Switch>
-              <Route exact path="/" component={Movies} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route path="*" component={Error} />
             </Switch>

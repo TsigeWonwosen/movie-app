@@ -18,12 +18,14 @@
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1rem;
   padding: 2rem;
+  justify-items: center;
   margin: 1.5rem auto;
 }
 
 @media (max-width: 668px) {
   .movie-wrapper {
-    padding: 1rem;
+    padding: 0 0.5rem;
+    margin: 1.5rem auto;
   }
 }
 /* Movie Card  */
@@ -39,7 +41,7 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   max-width: 300px;
-  height: 300px;
+  height: 320px;
   overflow: hidden;
   background-color: rgba(23, 42, 211, 0.3);
   transition: transform 500ms ease-in-out;
@@ -84,7 +86,7 @@ img {
 }
 .movie-info .vote {
   width: 20%;
-  min-width: 100px;
+  margin-left: 5px;
   background-color: transparent;
   border: none;
   border-radius: 5px;

@@ -28,3 +28,22 @@ img {
   min-height: 100%;
   object-fit: cover;
 }
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #2e3e86;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: rgb(99, 107, 146);
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(82, 113, 214);
+}
