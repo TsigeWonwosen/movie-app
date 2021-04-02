@@ -36,8 +36,6 @@ const Movies = () => {
       {error && (() => <h1>Error Fetching Movies ...</h1>)}
       {loading && (() => <h1>Loading ...</h1>)}
 
-      <Banner />
-
       {trailerUrl && (
         <div className="preview-video">
           <button className="preview-close" onClick={() => setTrailerUrl('')}>

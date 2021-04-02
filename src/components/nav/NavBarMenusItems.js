@@ -1,12 +1,16 @@
 const MenuItems = [
   {
     path: '/',
+    name: 'Home',
+  },
+  {
+    path: '/movies',
     name: 'Movies',
   },
 
   {
     path: '/login',
-    name: 'Login',
+    name: 'Login/Register',
   },
 ];
 

@@ -1,5 +1,6 @@
 .movie_banner {
   margin: 0;
+  margin-top: -70px;
   padding: 0;
   box-sizing: border-box;
   color: #f8f9fa;
@@ -8,6 +9,7 @@
   width: 100%;
   position: relative;
   z-index: 9;
+  overflow: hidden;
 }
 
 .banner_contents {
