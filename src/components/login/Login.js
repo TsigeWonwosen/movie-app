@@ -23,10 +23,17 @@ function Login() {
           <Button type="submit">{hasAccount ? 'Login' : 'Register'}</Button>
         </Form>
         <Title2>
-          Don't have an account?{' '}
-          <Info onClick={() => setHasAccount(!hasAccount)}>
-            {hasAccount ? 'Register' : 'Login'}
-          </Info>
+          {hasAccount ? (
+            <>
+              Don't have an account?
+              <Info onClick={() => setHasAccount(!hasAccount)}>Register</Info>
+            </>
+          ) : (
+            <>
+              Already have an account?
+              <Info onClick={() => setHasAccount(!hasAccount)}>Sign in</Info>
+            </>
+          )}
         </Title2>
       </FormWrapper>
     </Wrapper>
@@ -103,5 +110,6 @@ export const Text = styled.p`
 export const Info = styled.span`
   font-family: 'Raleway', sans-serif;
   color: #f2494d;
+  margin-left: 0.5rem;
   cursor: pointer;
 `;
