@@ -1,6 +1,8 @@
-# Movie App
+# Building Movie App from scratch using React(Custom Hooks, Context),Firebase
 
-Built with
+This application (a Movie App) was built using React (Custom Hooks, Context), Firebase & Styled Components. I have built the following pages within this application: sign in, sign up, browse & lastly the homepage. There are four different pages, some using protected routes with auth listeners. Firebase ,Api and that data is retrieved using a custom hook; authentication is used on all pages, which is handled by Firebase as well.
+
+### Built with
 
 1. React
 
@@ -12,6 +14,8 @@ Built with
 
 5. Styled Components
 
+6. Firebase
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -21,3 +25,5 @@ In the project directory, you can run:
 ### `npm run build`
 
 ### `npm run eject`
+
+![Preview](MovieApp.png?raw=true)

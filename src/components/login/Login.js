@@ -1,23 +1,83 @@
 import React, { useState } from 'react';
+
 import styled from 'styled-components';
+import { useAuth } from '../../context/AuthContext';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+  let history = useHistory();
+
   const [hasAccount, setHasAccount] = useState(true);
+  const [user, setUser] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirm: '',
+  });
+  const [error, setError] = useState('');
+
+  const { currentUser, signUp, signIn } = useAuth();
+  console.log(currentUser);
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { email, password, confirm } = user;
+    if (hasAccount) {
+     let res= await signIn(email, password);
+     console.log(res)
+      if (currentUser?.email) {
+        history.push('/');
+      } else {
+        setError(currentUser?.message);
+        history.push('/login');
+      }
+      return;
+    } else {
+      if (password !== confirm) {
+        return setError('password is not the same.');
+      }
+      signUp(email, password);
+      history.push('/');
+    }
+  };
   return (
     <Wrapper>
       <FormWrapper>
-        <Title>{hasAccount ? 'Login' : 'Register'}</Title>
-        <Form>
+        <Title>
+          {hasAccount ? 'Login' : 'Register'} {currentUser && currentUser.email}
+        </Title>
+        {error && error}
+        <Form onSubmit={handleSubmit}>
           {!hasAccount && (
-            <Input type="text" name="username" placeholder="User Name" />
+            <Input
+              type="text"
+              name="username"
+              placeholder="User Name"
+              onChange={handleChange}
+            />
           )}
-          <Input type="text" name="email" placeholder="Email" />
-          <Input type="password" name="password" placeholder="Password" />
+          <Input
+            type="text"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+          />
           {!hasAccount && (
             <Input
               type="password"
               name="confirm"
               placeholder="Password Confirmation"
+              onChange={handleChange}
             />
           )}
           <Button type="submit">{hasAccount ? 'Login' : 'Register'}</Button>

@@ -8,10 +8,7 @@ const MenuItems = [
     name: 'Movies',
   },
 
-  {
-    path: '/login',
-    name: 'Login/Register',
-  },
+  
 ];
 
 export default MenuItems;

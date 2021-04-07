@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import YouTube from 'react-youtube';
-import Banner from './Banner';
 import MoviesPagination from './Pagination';
 import Movie from './Movie';
 import '../../style/movies.css';
