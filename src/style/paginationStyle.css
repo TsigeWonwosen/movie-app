@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   margin-top: 3rem;
 }
 
@@ -19,7 +19,12 @@ ul.pagination li {
   display: flex;
   justify-content: center;
 }
-
+ul.pagination li:first-child {
+  border-radius: 100px 0 0 100px;
+}
+ul.pagination li:last-child {
+  border-radius: 0 100px 100px 0;
+}
 ul.pagination li a {
   text-decoration: none;
   color: #9ebfdd;
@@ -51,7 +56,6 @@ ul.pagination li a.active {
     min-width: 200px;
     padding: 5px;
     margin: 2rem auto;
-    margin-top: 8rem;
   }
 
   ul.pagination li {

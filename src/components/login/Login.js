@@ -17,7 +17,7 @@ function Login() {
   const [error, setError] = useState('');
 
   const { currentUser, signUp, signIn } = useAuth();
-  console.log(currentUser);
+  // console.log(currentUser);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -27,8 +27,7 @@ function Login() {
 
     const { email, password, confirm } = user;
     if (hasAccount) {
-     let res= await signIn(email, password);
-     console.log(res)
+      await signIn(email, password);
       if (currentUser?.email) {
         history.push('/');
       } else {
@@ -47,9 +46,7 @@ function Login() {
   return (
     <Wrapper>
       <FormWrapper>
-        <Title>
-          {hasAccount ? 'Login' : 'Register'} {currentUser && currentUser.email}
-        </Title>
+        <Title>{hasAccount ? 'Login' : 'Register'}</Title>
         {error && error}
         <Form onSubmit={handleSubmit}>
           {!hasAccount && (

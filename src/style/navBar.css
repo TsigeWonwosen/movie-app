@@ -56,7 +56,7 @@ nav .nav-logo {
   border-radius: 34%;
   align-items: center;
   justify-content: center;
-  border: 2px solid #942a33;
+  border: 2px solid #a32f33;
   box-shadow: -8px 9px 73px 0px rgb(151, 122, 204);
   transition: all 0.3s ease-in;
 }
@@ -137,52 +137,50 @@ nav .nav-lists {
 
 .showSideNav {
   position: fixed;
-  top: 38px;
-  right: 1rem;
+  top: 65px;
+  right: 2rem;
   display: none;
-  /* transform: translate3d(40, 0px, 0px); */
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin-top: 2rem;
-  height: 150px;
-  width: 150px;
-  background-color: rgba(24, 11, 53, 0.9);
-  border-radius: 0 0 5px 5px;
+  padding: 1rem 0;
+  height: 200px;
+  width: 200px;
+  font-size: 1rem;
+  background-color: #171134;
+  border-radius: 5px 5px;
+  transform: translate3d(0px, 0px, 0px);
+
   transition: transform 0.5s ease-in-out;
 }
 
-.hide {
-  top: 40px;
-  right: 0px;
-  transform: translate3d(40px, 0px, 0px);
+.showSideNav.hide {
   transition: all 0.5s ease-in-out;
+  transform: translate3d(100vw, 0px, 0px);
 }
-.hide li {
-  display: none;
-}
+
 .showSideNav li {
   width: 95%;
   padding: 0.8rem;
   margin: 0 auto;
-  transition: all 0.3s ease-in-out;
+  border-radius: 999px;
+  transition: all 0.5s ease-in-out;
   list-style: none;
 }
 .showSideNav li:hover {
   width: 95%;
-  background-color: rgba(43, 17, 99, 0.5);
+  background-color: #a32f33;
+  border: none;
 }
 .showSideNav li a {
-  color: rgb(208, 209, 212);
+  color: rgba(208, 209, 212, 0.753);
   padding: 0.8rem;
   text-decoration: none;
   font-family: sans-serif;
-  border-bottom: 2px solid transparent;
   transition: all 0.5s ease-in-out;
 }
 .showSideNav li:hover a {
   color: rgb(222, 226, 231);
-  border-bottom: 2px solid rgb(248, 241, 241);
 }
 
 @media screen and (max-width: 750px) {
@@ -204,10 +202,9 @@ nav .nav-lists {
   .nav-lists li {
     display: none;
   }
-  .showSideNav,
-  .hide {
+  .showSideNav {
     display: flex;
-    transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0vw, 0px, 0px);
     transition: all 0.5s ease-in-out;
   }
 }

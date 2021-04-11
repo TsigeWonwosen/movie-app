@@ -9,7 +9,7 @@ import { useAuth } from '../../context/AuthContext';
 import useWindowSize from '../../hooks/useWindowSize';
 import LOGO from '../../img/wondeLogo.png';
 
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import '../../style/navBar.css';
 
 const NavBar = () => {
@@ -74,7 +74,7 @@ const NavBar = () => {
         </div>
         {!windowSize && <Search />}
         <ul
-          className={windowSize ? (open ? 'showSideNav' : 'hide') : 'nav-lists'}
+          className={windowSize ? (open ? 'showSideNav' : ' showSideNav hide') : 'nav-lists'}
           onClick={() => setOpen(false)}
         >
           {newItem.map((item, index) => {
@@ -104,12 +104,12 @@ const NavBar = () => {
 export default NavBar;
 
 export const ProfileContainer = styled.section`
+  width: 100%;
   color: #f4f4f4;
-  font-size: 0.8rem;
 `;
 export const Profile = styled.span`
   margin-left: 0.5rem;
-  padding: 4px 10px;
+  padding: 0.8rem;
   border-radius: 999px;
   color: #f4f4f4;
   cursor: pointer;
