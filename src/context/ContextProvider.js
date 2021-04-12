@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-
 import movieTrailer from 'movie-trailer';
 import { SEARCH_API } from '../asset/api-key';
 import useFetch from '../hooks/useFetch';
@@ -31,6 +30,7 @@ function MovieProvider({ children }) {
     }
   };
 
+  
   const setVoteClass = (vote) => {
     if (vote >= 8) {
       return 'green';
@@ -71,6 +71,7 @@ function MovieProvider({ children }) {
         trailerUrl,
         setTrailerUrl,
         activePage,
+      
       }}
     >
       {children}

@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "firebase": "^8.3.1",
     "framer-motion": "^4.0.3",
+    "fuse.js": "^6.4.6",
     "movie-trailer": "^2.1.0",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
