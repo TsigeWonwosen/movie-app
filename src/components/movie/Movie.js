@@ -19,12 +19,10 @@ function Movie({ movie, handleClick, setVoteClass }) {
           <h5>{title}</h5>
         </span>
         <span className="vote-container">
-          <h5>
-            vote{' '}
-            <span className={`vote ${setVoteClass(movie.vote_average)}`}>
-              {movie.vote_average}
-            </span>
-          </h5>
+          <h5>vote </h5>
+          <span className={`vote ${setVoteClass(movie.vote_average)}`}>
+            {movie.vote_average}
+          </span>
         </span>
       </div>
       <div className="movie-over" onClick={() => handleClick(movie)}>

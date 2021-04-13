@@ -17,7 +17,7 @@ const Movies = () => {
   } = useContext(MovieContext);
 
   const opts = {
-    height: '500px',
+    height: '540px',
     width: '100%',
     playerVars: {
       autoplay: 1,
@@ -31,12 +31,12 @@ const Movies = () => {
   };
 
   return (
-    <div className="movie-container" onClick={() => setTrailerUrl('')}>
+    <div className="movie-container">
       {error && (() => <h1>Error Fetching Movies ...</h1>)}
       {loading && (() => <h1>Loading ...</h1>)}
 
       {trailerUrl && (
-        <div className="preview-video">
+        <div className="preview-video" onClick={() => setTrailerUrl('')}>
           <button className="preview-close" onClick={() => setTrailerUrl('')}>
             X
           </button>

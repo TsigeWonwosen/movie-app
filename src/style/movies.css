@@ -40,6 +40,7 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   max-width: 300px;
+  min-width: 200px;
   height: 320px;
   overflow: hidden;
   background-color: rgba(23, 42, 211, 0.3);
@@ -59,7 +60,7 @@ img {
 }
 .movie-info {
   display: flex;
-  padding: 0px 0.5rem;
+  padding: 0px 0.3rem;
   align-items: center;
   justify-content: space-between;
   background-color: #100f64;
@@ -69,7 +70,7 @@ img {
   overflow: hidden;
 }
 .movie-info .title {
-  width: 80%;
+  width: 70%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -77,41 +78,44 @@ img {
   justify-content: center;
 }
 .movie-info .title h5 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 .vote-container {
-  width: 20%;
-  min-width: 50px;
+  /* min-width: 50px; */
+  width: 30%;
+  max-width: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.vote-container h5 {
+  max-width: 60%;
+  font-weight: 400;
 }
 .movie-info .vote {
-  width: 20%;
-  margin-left: 5px;
+  width: 40%;
+  height: 100%;
   background-color: transparent;
   border: none;
   border-radius: 5px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
   outline: none;
 }
 
 .movie-info .vote.orange {
   color: rgb(233, 178, 75);
-  font-size: 13px;
-  font-weight: 600;
 }
 
 .movie-info .vote.green {
   color: rgb(57, 180, 57);
-  font-size: 13px;
-  font-weight: 600;
 }
 
 .movie-info .vote.red {
   color: rgb(228, 82, 82);
-  font-size: 13px;
-  font-weight: 600;
 }
+
 .movie-over {
   background-color: #20223f;
   border-top-left-radius: 20px;
@@ -184,7 +188,7 @@ img {
   padding-left: 3.5rem;
   margin: 0;
   box-sizing: border-box;
-  width: 32%;
+  width: 85%;
   min-width: 230px;
   height: 100%;
   background-color: #05054b98;
@@ -211,6 +215,8 @@ img {
 }
 #search:focus {
   width: 95%;
+  background-color: white;
+  color: #15097c;
 }
 .searchIcon {
   position: absolute;
@@ -222,6 +228,21 @@ img {
   height: 100%;
 }
 
+.searchClose {
+  position: absolute;
+  top: 60%;
+  right: 70px;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: #8a1414;
+  width: 20px;
+  height: 20px;
+}
+
+.searchClose:hover {
+  cursor: pointer;
+  color: #dd0e0e;
+}
 @media (max-width: 900px) {
   .movie-header {
     width: 30%;
@@ -239,7 +260,7 @@ img {
   right: 0v;
   width: 100vw;
   height: 100%;
-  z-index: 1000;
+  z-index: 5000;
 }
 
 .preview-close {
@@ -257,15 +278,16 @@ img {
 .search-result {
   position: fixed;
   top: 70px;
-  left: 50%;
+  left: 43%;
   height: auto;
-  min-width: 200px;
+  min-width: 270px;
   width: auto;
   transform: translateX(-50%);
   background-color: #f1f1f1;
   border-radius: 15px;
   color: #0a0a3d;
   z-index: 9000;
+  overflow: hidden;
 }
 
 .search-result ul {
@@ -273,6 +295,8 @@ img {
   width: 100%;
   height: 100%;
   width: 350px;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 .search-result ul li {
   list-style: none;
@@ -308,4 +332,26 @@ img {
   font-size: 13px;
   margin-top: 0.2rem;
   color: gray;
+}
+
+.search-result ul::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 14px;
+}
+
+/* Track */
+.search-result ul::-webkit-scrollbar-track {
+  background: #a6b1ee;
+  margin-right: 1rem;
+}
+
+/* Handle */
+.search-result ul::-webkit-scrollbar-thumb {
+  background: rgb(99, 107, 146);
+  border-radius: 14px;
+}
+
+/* Handle on hover */
+.search-result ul::-webkit-scrollbar-thumb:hover {
+  background: rgb(49, 89, 223);
 }
