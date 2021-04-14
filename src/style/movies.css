@@ -51,7 +51,8 @@
   width: 100%;
 }
 img {
-  background-color: rgba(27, 34, 92, 0.3);
+  background: rgba(18, 18, 19, 0.3);
+  min-width: 100%;
   max-width: 100%;
   height: 100%;
   width: 100%;
@@ -70,7 +71,7 @@ img {
   overflow: hidden;
 }
 .movie-info .title {
-  width: 70%;
+  width: 75%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -82,8 +83,8 @@ img {
   font-weight: 600;
 }
 .vote-container {
-  /* min-width: 50px; */
-  width: 30%;
+  min-width: 50px;
+  width: 25%;
   max-width: 70px;
   display: flex;
   justify-content: space-around;
@@ -99,7 +100,7 @@ img {
   background-color: transparent;
   border: none;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   outline: none;
 }

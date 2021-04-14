@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useAuth } from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
+import ReactHelmet from '../../util/ReactHelmet';
 
 function Login() {
   let history = useHistory();
@@ -46,6 +47,7 @@ function Login() {
   return (
     <Wrapper>
       <FormWrapper>
+        <ReactHelmet title={hasAccount ? 'Login' : 'Register'} />
         <Title>{hasAccount ? 'Login' : 'Register'}</Title>
         {error && error}
         <Form onSubmit={handleSubmit}>

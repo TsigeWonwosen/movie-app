@@ -3,6 +3,7 @@ import YouTube from 'react-youtube';
 import MoviesPagination from './Pagination';
 import Movie from './Movie';
 import '../../style/movies.css';
+import ReactHelmet from '../../util/ReactHelmet';
 import { MovieContext } from '../../context/ContextProvider';
 
 const Movies = () => {
@@ -34,7 +35,7 @@ const Movies = () => {
     <div className="movie-container">
       {error && (() => <h1>Error Fetching Movies ...</h1>)}
       {loading && (() => <h1>Loading ...</h1>)}
-
+      <ReactHelmet title="Movies" />
       {trailerUrl && (
         <div className="preview-video" onClick={() => setTrailerUrl('')}>
           <button className="preview-close" onClick={() => setTrailerUrl('')}>

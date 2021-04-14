@@ -30,6 +30,7 @@
   cursor: pointer;
 }
 .footer .copyRight {
+  margin-top: 1rem;
   padding: 4px;
 }
 .footer .copyRight h5 {

@@ -1,9 +1,11 @@
 import { Movies, Banner } from '../../components';
 import styled from 'styled-components';
+import ReactHelmet from '../../util/ReactHelmet';
 
 function Home() {
   return (
     <Wrapper>
+      <ReactHelmet title="Home" />;
       <Banner />
       <Movies />
     </Wrapper>

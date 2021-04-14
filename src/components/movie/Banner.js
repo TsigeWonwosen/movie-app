@@ -76,6 +76,7 @@ function Banner() {
       <div
         style={{
           margin: '0 auto',
+          marginTop: '-70px',
           display: 'flex',
           flexDirection: 'column',
           verticalAlign: 'middle',
@@ -87,6 +88,7 @@ function Banner() {
           backgroundSize: 'cover',
           opacity: '1',
           backgroundBlendMode: 'overlay',
+          // border: '2px solid red',
         }}
       >
         <div className="banner_contents">
