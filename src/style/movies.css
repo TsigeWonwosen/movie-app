@@ -50,7 +50,7 @@
   max-height: 90%;
   width: 100%;
 }
-img {
+.imageContainer img {
   background: rgba(18, 18, 19, 0.3);
   min-width: 100%;
   max-width: 100%;
@@ -316,7 +316,7 @@ img {
   padding-left: 0.2rem;
 }
 .search-result ul li img {
-  width: 40px;
+  width: 40px !important;
   height: 40px;
   border-radius: 10px;
   margin-right: 0.5rem;

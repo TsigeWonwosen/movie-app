@@ -3,8 +3,8 @@ import { Nav, Error, Home, Movies, Login, Footer } from './components';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -13,8 +13,8 @@ function App() {
           <Route path="*" component={Error} />
         </Switch>
         <Footer />
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

@@ -2,6 +2,7 @@ import '../../style/footer.css';
 import { FaGithub, FaLinkedin, FaYoutube, FaGooglePlusG } from 'react-icons/fa';
 
 import FooterStyle from './styled';
+
 function Footer() {
   return (
     <FooterStyle>
@@ -48,8 +49,8 @@ function Footer() {
           <FooterStyle.Link href="#">Speed Test</FooterStyle.Link>
         </FooterStyle.Column>
       </FooterStyle.Row>
+      <FooterStyle.Break />
       <div className="copyRight">
-        <FooterStyle.Break />
         <FooterStyle.Text>
           &copy; {new Date().getFullYear().toString()} Wonde. All Right Reserved
         </FooterStyle.Text>

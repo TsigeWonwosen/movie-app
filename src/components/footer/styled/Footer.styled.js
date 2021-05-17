@@ -2,15 +2,16 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
-  padding: 70px 40px 40px;
+  padding: 70px 2rem 30px;
   margin: auto;
   max-width: 100%;
+  width: 100%;
   flex-direction: column;
   background-color: #000000;
   color: #f0dcdc;
 
   @media (max-width: 1000px) {
-    padding: 70px 30px 20px;
+    padding: 70px 2rem 20px;
   }
 `;
 
@@ -21,10 +22,11 @@ export const Column = styled.div`
 `;
 
 export const Row = styled.div`
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   grid-gap: 15px;
 
   @media (max-width: 900px) {
